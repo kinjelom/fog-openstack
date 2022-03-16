@@ -20,6 +20,7 @@ module Fog
                          names
                        end
           entries = get_by_type(names_list)
+          Fog::Logger.info("get_endpoint_url: names_list= #{names_list}, entries= #{entries}, names= #{names}, interfaces= #{interfaces}, region= #{region}, @payload= #{@payload}")
           raise ServiceTypeError, 'No endpoint match' if entries.empty?
 
           interfaces_list = if interfaces.kind_of?(String)
